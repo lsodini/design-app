@@ -1,0 +1,26 @@
+
+.quotes-wrapper {
+	
+	 /* Nasconde eventuali overflow orizzontali */
+	padding: 20px; /* Aggiungi del padding se necessario */
+	display: flex;
+	justify-content: center;
+	
+  }
+  
+  .quotes-container {
+	display: flex;
+	flex-direction: column;
+
+	
+  }
+  
+  .quote {
+	
+	color: #fff; /* Cambia il colore in base al tuo design */
+	margin: 20px 10px; /* Aggiungi margine tra le citazioni */
+	max-width: 55%; /* Limita la larghezza delle citazioni */
+	word-wrap: break-word; /* Forza il testo a andare a capo */
+	overflow-wrap: break-word; /* Opzione aggiuntiva per garantire il wrap */
+  }
+  
