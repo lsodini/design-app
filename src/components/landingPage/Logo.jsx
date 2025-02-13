@@ -72,7 +72,7 @@ export default function Logo({ scrollY }) {
           initial={{ opacity: 0 }}
           animate={{
             opacity: 1,
-            x: `${scrollY * 0.2 - 100}%`, // Muove il testo da destra a sinistra con il movimento dello scroll
+            x: `${scrollY * 0.2 - 100}%`, 
           }}
           transition={{
             type: 'tween', 

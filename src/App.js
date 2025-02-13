@@ -6,8 +6,7 @@ import Brutalism from './components/Brutalism';
 import Minimalism from './components/Minimalism';
 import Futurism from './components/Futurism';
 import Navigation from './components/Navigation';
-import Logo from './components/landingPage/Logo.jsx';
-import Quotes from './components/landingPage/Quotes.jsx';
+
 import LandingPage from './components/landingPage/LandingPage.jsx';
 import './App.css';
 
@@ -26,7 +25,9 @@ export default function App() {
 
   return (
     <>
+    
       <div className="layout bg-black w-100 vh-100">
+        
         <Router>
           <Navigation />
           
