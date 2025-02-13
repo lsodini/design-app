@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export default function Logo({ scrollY }) {
   return (
-    <div className="logo pt-2 text-white d-flex justify-content-between ">
+    <div className="logo pt-2 text-white d-flex justify-content-between w-100 ">
       <div 
         className="flex-grow-1 pt-4 mt-2"
         style={{

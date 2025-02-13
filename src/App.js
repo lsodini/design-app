@@ -6,8 +6,9 @@ import Brutalism from './components/Brutalism';
 import Minimalism from './components/Minimalism';
 import Futurism from './components/Futurism';
 import Navigation from './components/Navigation';
-import Logo from './components/Logo';
-import Quotes from './components/Quotes.jsx';
+import Logo from './components/landingPage/Logo.jsx';
+import Quotes from './components/landingPage/Quotes.jsx';
+import LandingPage from './components/landingPage/LandingPage.jsx';
 import './App.css';
 
 export default function App() {
@@ -29,13 +30,9 @@ export default function App() {
         <Router>
           <Navigation />
           
-            
-            <Logo scrollY={scrollY} />
-          
-          
          
             <Routes>
-              <Route path="/" element={<div></div>} />
+              <Route path="/" element={<LandingPage/>} />
               <Route path="/brutalism" element={<Brutalism />} />
               <Route path="/minimalism" element={<Minimalism />} />
               <Route path="/futurism" element={<Futurism />} />
