@@ -17,6 +17,7 @@ export default function WelcomeSection() {
 	}, []);
   
   return (
+	
     <section className="welcome-section py-5 text-center text-white">
       <div className="container">
         <h1 className="display-4 mb-4">Welcome to our Design Exploration Hub</h1>

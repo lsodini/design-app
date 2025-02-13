@@ -76,6 +76,12 @@ export default function Quotes() {
          <Arrow fill="white" className="arrow-icon" />
         </motion.div>
       </motion.div>
+      <hr 
+      className="mt-5"
+      style={{
+        width: "80%",
+        margin: "0 auto",
+      }}/>
     </div>
   );
 }
