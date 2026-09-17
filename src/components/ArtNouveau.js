@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { motion, useScroll, useInView } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import Navigation from './Navigation';
 import '../style/ArtNouveau.css';
 
@@ -66,7 +66,6 @@ const ArtNouveau = () => {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const heroRef = useRef(null);
   const svgRef = useRef(null);
-  const { scrollYProgress } = useScroll();
   const isInView = useInView(svgRef, { once: false, amount: 0.3 });
 
   useEffect(() => {

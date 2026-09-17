@@ -1,27 +1,8 @@
-import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import Navigation from './Navigation';
 import '../style/ArtDeco.css';
 
 const ArtDeco = () => {
-  const [scrollY, setScrollY] = useState(0);
-
-  useEffect(() => {
-    let rafId = null;
-    const handleScroll = () => {
-      if (rafId) return;
-      rafId = requestAnimationFrame(() => {
-        rafId = null;
-        setScrollY(window.scrollY);
-      });
-    };
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      if (rafId) cancelAnimationFrame(rafId);
-    };
-  }, []);
-
   const fanVariants = {
     hidden: { rotate: -90, opacity: 0 },
     visible: {
