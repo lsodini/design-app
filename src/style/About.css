@@ -1,0 +1,132 @@
+.about-page {
+  min-height: 100vh;
+  background: #f7f5f0;
+  color: #1a1a1a;
+  position: relative;
+}
+
+/* Hero */
+.about-hero {
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-title {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 5rem;
+  font-weight: 300;
+  letter-spacing: 24px;
+  text-align: center;
+}
+
+.about-hero-line {
+  width: 80px;
+  height: 1px;
+  background: #c73e1d;
+  margin-top: 2rem;
+}
+
+/* Bio */
+.about-bio {
+  padding: 6rem 4rem;
+  display: flex;
+  justify-content: center;
+}
+
+.about-bio-inner {
+  max-width: 640px;
+}
+
+.about-label {
+  display: block;
+  font-size: 0.7rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #c73e1d;
+  margin-bottom: 1.5rem;
+}
+
+.about-bio-text {
+  font-size: 1.15rem;
+  line-height: 2;
+  color: #1a1a1a90;
+  font-weight: 300;
+}
+
+/* Philosophy */
+.about-philosophy {
+  padding: 6rem 4rem;
+}
+
+.about-section-title {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.6rem;
+  font-weight: 300;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.about-principles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.about-principle-card {
+  background: transparent;
+  border: 1px solid #1a1a1a0d;
+  padding: 3rem 2rem;
+  transition: background 0.3s ease;
+  cursor: default;
+}
+
+.about-principle-card:hover {
+  background: #ffffff60;
+}
+
+.about-principle-num {
+  font-size: 0.7rem;
+  color: #c73e1d;
+  letter-spacing: 3px;
+  font-weight: 400;
+}
+
+.about-principle-title {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin: 1rem 0 1.2rem;
+  letter-spacing: 0.5px;
+}
+
+.about-principle-desc {
+  font-size: 0.9rem;
+  line-height: 1.9;
+  color: #1a1a1a70;
+  font-weight: 300;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-title {
+    font-size: 2.8rem;
+    letter-spacing: 14px;
+  }
+  .about-bio,
+  .about-philosophy {
+    padding: 4rem 2rem;
+  }
+  .about-principles {
+    grid-template-columns: 1fr;
+  }
+  .about-principle-card {
+    padding: 2rem 1.5rem;
+  }
+}

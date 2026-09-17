@@ -1,10 +1,25 @@
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import '../../style/LandingPage.css';
+
+function useIsMobile() {
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth <= 768);
+    check();
+    window.addEventListener('resize', check);
+    return () => window.removeEventListener('resize', check);
+  }, []);
+  return isMobile;
+}
 
 export default function Logo({ scrollY }) {
+  const isMobile = useIsMobile();
+
   return (
-    <div className="logo pt-2 text-white d-flex justify-content-between w-100 ">
-      <div 
+    <div className="logo pt-2 d-flex justify-content-between w-100">
+      <div
         className="flex-grow-1 pt-4 mt-2"
         style={{
           whiteSpace: 'nowrap',
@@ -14,14 +29,16 @@ export default function Logo({ scrollY }) {
       >
         <motion.p
           className="display-6"
-          initial={{ opacity: 0, x: '-200%' }} // Inizia fuori a sinistra
+          initial={{ opacity: 0, x: isMobile ? 0 : '-200%' }}
           animate={{
             opacity: 1,
-            x: `${-scrollY * 0.2 - 100}%`, // Muove il testo da sinistra a destra con il movimento dello scroll
+            x: isMobile
+              ? `${-scrollY * 0.1 - 20}%`
+              : `${-scrollY * 0.2 - 100}%`,
           }}
           transition={{
-            type: 'tween', // Usa un tween per un movimento più lineare
-            ease: 'easeOut', // Rende il movimento più fluido
+            type: 'tween',
+            ease: 'easeOut',
             duration: 0.5,
           }}
         >
@@ -29,18 +46,18 @@ export default function Logo({ scrollY }) {
         </motion.p>
       </div>
 
-      <Link to="/" id="logo" className="d-flex text-white text-decoration-none"> 
-        <motion.h1
+      <Link to="/" id="logo" className="d-flex text-decoration-none" aria-label="Home">
+        <motion.span
           className="display-1"
           initial={{ scale: 0 }}
           animate={{ scale: 1.3 }}
           transition={{ delay: 0.5, duration: 0.5 }}
+          aria-hidden="true"
         >
           |
-        </motion.h1>
+        </motion.span>
         &nbsp;
         <motion.h1
-		
           className="display-1 fw-bold m-0 pt-2"
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
@@ -49,14 +66,15 @@ export default function Logo({ scrollY }) {
           DESIGN
         </motion.h1>
         &nbsp;
-        <motion.h1
-          className="display-1 "
+        <motion.span
+          className="display-1"
           initial={{ scale: 0 }}
           animate={{ scale: 1.3 }}
           transition={{ delay: 0.5, duration: 0.5 }}
+          aria-hidden="true"
         >
           |
-        </motion.h1>
+        </motion.span>
       </Link>
 
       <div
@@ -72,15 +90,17 @@ export default function Logo({ scrollY }) {
           initial={{ opacity: 0 }}
           animate={{
             opacity: 1,
-            x: `${scrollY * 0.2 - 100}%`, 
+            x: isMobile
+              ? `${scrollY * 0.1 - 20}%`
+              : `${scrollY * 0.2 - 100}%`,
           }}
           transition={{
-            type: 'tween', 
-            ease: 'easeOut', 
-            duration: 0.5, 
+            type: 'tween',
+            ease: 'easeOut',
+            duration: 0.5,
           }}
         >
-          "Good design is not just about aesthetics; it’s about functionality, usability, and creating meaningful experiences."
+          "Good design is not just about aesthetics; it's about functionality, usability, and creating meaningful experiences."
         </motion.p>
       </div>
     </div>

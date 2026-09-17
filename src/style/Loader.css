@@ -1,0 +1,137 @@
+.loader-page {
+  position: fixed;
+  inset: 0;
+  background: #f7f5f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.loader-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+/* ====== ENSŌ BRUSH STROKE ====== */
+.loader-enso-wrap {
+  width: 140px;
+  height: 140px;
+}
+
+.loader-enso-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.loader-enso-circle {
+  stroke-dasharray: 471;
+  stroke-dashoffset: 471;
+  animation: loader-draw 2s ease-in-out forwards;
+}
+
+@keyframes loader-draw {
+  0% {
+    stroke-dashoffset: 471;
+    opacity: 0.06;
+  }
+  10% {
+    opacity: 0.12;
+  }
+  100% {
+    stroke-dashoffset: 60;
+    opacity: 0.12;
+  }
+}
+
+/* ====== KANJI ====== */
+.loader-kanji {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3.5rem;
+  font-weight: 100;
+  color: #1a1a1a;
+  user-select: none;
+  opacity: 0;
+  animation: loader-kanji-in 1s ease-out 0.4s forwards;
+}
+
+@keyframes loader-kanji-in {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+    letter-spacing: 0.3em;
+  }
+  100% {
+    opacity: 0.15;
+    transform: translate(-50%, -50%) scale(1);
+    letter-spacing: 0.1em;
+  }
+}
+
+/* ====== THREE LINES (間) ====== */
+.loader-lines {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  margin-top: 1.2rem;
+}
+
+.loader-line {
+  display: block;
+  height: 1px;
+  background: #1a1a1a;
+  transform-origin: center;
+}
+
+.loader-line-1 {
+  width: 0;
+  animation: loader-line-grow 0.6s ease-out 0.8s forwards;
+}
+
+.loader-line-2 {
+  width: 0;
+  animation: loader-line-grow 0.6s ease-out 1s forwards;
+}
+
+.loader-line-3 {
+  width: 0;
+  animation: loader-line-grow 0.6s ease-out 1.2s forwards;
+}
+
+@keyframes loader-line-grow {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  100% {
+    width: 40px;
+    opacity: 0.15;
+  }
+}
+
+/* ====== REDUCED MOTION ====== */
+@media (prefers-reduced-motion: reduce) {
+  .loader-enso-circle {
+    stroke-dashoffset: 60;
+    opacity: 0.12;
+    animation: none;
+  }
+  .loader-kanji {
+    opacity: 0.15;
+    transform: translate(-50%, -50%) scale(1);
+    letter-spacing: 0.1em;
+    animation: none;
+  }
+  .loader-line {
+    width: 40px;
+    opacity: 0.15;
+    animation: none;
+  }
+}

@@ -1,0 +1,326 @@
+.bauhaus-page {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  color: #000000;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Hero Section */
+.bauhaus-hero {
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+.hero-shapes {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.hero-circle {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  top: 15%;
+  left: 10%;
+  opacity: 0.8;
+}
+
+.hero-square {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  bottom: 20%;
+  right: 12%;
+  opacity: 0.8;
+}
+
+.hero-triangle {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 90px solid transparent;
+  border-right: 90px solid transparent;
+  border-bottom: 160px solid #F4A261;
+  top: 25%;
+  right: 25%;
+  opacity: 0.7;
+}
+
+.hero-content {
+  text-align: center;
+  z-index: 1;
+}
+
+.bauhaus-title {
+  font-size: 9rem;
+  font-weight: 900;
+  letter-spacing: 12px;
+  line-height: 1;
+  text-transform: uppercase;
+  font-family: 'Helvetica Neue', 'Arial Black', Arial, sans-serif;
+}
+
+.bauhaus-letter {
+  display: inline-block;
+}
+
+.bauhaus-subtitle {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: 8px;
+  color: #666;
+  margin-top: 1.5rem;
+}
+
+/* Sections */
+.bauhaus-section {
+  padding: 5rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.bauhaus-section-title {
+  font-size: 2.2rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin-bottom: 0.75rem;
+  border-left: 6px solid #000;
+  padding-left: 1rem;
+}
+
+.bauhaus-section-desc {
+  color: #777;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  letter-spacing: 1px;
+}
+
+/* Color Palette */
+.color-palette {
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.color-swatch {
+  width: 140px;
+  height: 140px;
+  border-radius: 0;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  transition: box-shadow 0.2s;
+}
+
+.color-swatch.active {
+  outline: 4px solid #000;
+  outline-offset: 4px;
+}
+
+.color-swatch:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.swatch-name {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.swatch-hex {
+  font-size: 0.7rem;
+  opacity: 0.8;
+  font-family: monospace;
+}
+
+.accent-indicator {
+  padding: 1rem 1.5rem;
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* Composition Area */
+.composition-area {
+  position: relative;
+  min-height: 450px;
+  border: 3px solid #000;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  overflow: hidden;
+  padding: 2rem;
+}
+
+.draggable-shape {
+  cursor: grab;
+  position: relative;
+  z-index: 1;
+}
+
+.draggable-shape:active {
+  cursor: grabbing;
+}
+
+.shape-label {
+  position: absolute;
+  bottom: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  color: #999;
+  white-space: nowrap;
+}
+
+.composition-bg-shape {
+  pointer-events: none;
+}
+
+/* Grid Patterns */
+.grid-patterns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.grid-pattern {
+  padding: 1.5rem;
+  background: #fff;
+  border: 2px solid #e0e0e0;
+}
+
+.grid-container {
+  width: 100%;
+}
+
+.grid-cell {
+  transition: background-color 0.15s;
+}
+
+/* Footer */
+.bauhaus-footer {
+  padding: 4rem 2rem;
+  border-top: 4px solid #000;
+  text-align: center;
+  background-color: #fff;
+}
+
+.footer-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.footer-shapes {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.bauhaus-footer-text {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: #999;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .bauhaus-title {
+    font-size: 5rem;
+    letter-spacing: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .bauhaus-title {
+    font-size: 4rem;
+    letter-spacing: 6px;
+  }
+
+  .bauhaus-subtitle {
+    font-size: 0.9rem;
+    letter-spacing: 4px;
+  }
+
+  .bauhaus-hero {
+    height: 60vh;
+  }
+
+  .hero-circle {
+    width: 100px;
+    height: 100px;
+  }
+
+  .hero-square {
+    width: 80px;
+    height: 80px;
+  }
+
+  .hero-triangle {
+    border-left-width: 50px;
+    border-right-width: 50px;
+    border-bottom-width: 90px;
+  }
+
+  .color-palette {
+    justify-content: center;
+  }
+
+  .color-swatch {
+    width: 100px;
+    height: 100px;
+  }
+
+  .composition-area {
+    min-height: 300px;
+    gap: 1.5rem;
+  }
+
+  .draggable-shape {
+    transform: scale(0.7);
+  }
+
+  .grid-patterns {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .bauhaus-section-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .bauhaus-title {
+    font-size: 2.8rem;
+    letter-spacing: 4px;
+  }
+
+  .bauhaus-section {
+    padding: 3rem 1rem;
+  }
+
+  .grid-patterns {
+    grid-template-columns: 1fr;
+  }
+}

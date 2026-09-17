@@ -1,0 +1,321 @@
+.destijl-page {
+  background: #FFFFFF;
+  min-height: 100vh;
+  color: #000000;
+}
+
+.destijl-hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.destijl-title {
+  font-family: 'Arial', 'Helvetica Neue', sans-serif;
+  font-size: clamp(4rem, 12vw, 10rem);
+  font-weight: 900;
+  letter-spacing: 0.15em;
+  color: #000000;
+  z-index: 2;
+}
+
+.destijl-subtitle {
+  font-family: 'Arial', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #555;
+  margin-top: 1rem;
+  z-index: 2;
+}
+
+.hero-grid-line {
+  position: absolute;
+  background: #000000;
+}
+
+.hero-grid-line.h-line {
+  width: 100%;
+  height: 6px;
+  top: 50%;
+  transform-origin: left center;
+}
+
+.hero-grid-line.v-line {
+  width: 6px;
+  height: 100%;
+  left: 60%;
+  transform-origin: center top;
+}
+
+.destijl-section {
+  padding: 6rem 8%;
+  position: relative;
+}
+
+.section-header {
+  margin-bottom: 3rem;
+}
+
+.section-header h2 {
+  font-family: 'Arial', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.section-header p {
+  font-family: 'Arial', sans-serif;
+  font-size: 0.9rem;
+  color: #666;
+  letter-spacing: 0.02em;
+}
+
+.mondrian-container {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 12px;
+  background: #000000;
+}
+
+.mondrian-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+  background: #000000;
+}
+
+.mondrian-cell {
+  aspect-ratio: 1;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.2s ease;
+}
+
+.mondrian-cell:hover {
+  filter: brightness(0.9);
+}
+
+.cell-label {
+  position: absolute;
+  bottom: 4px;
+  left: 4px;
+  font-family: 'Arial', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+
+.mondrian-cell:hover .cell-label {
+  opacity: 1;
+}
+
+.mondrian-cell[style*="FFFFFF"] .cell-label {
+  color: #000;
+}
+
+.mondrian-cell:not([style*="FFFFFF"]) .cell-label {
+  color: #FFF;
+}
+
+.grid-line {
+  position: absolute;
+  background: #000000;
+  pointer-events: none;
+}
+
+.h-grid-line {
+  width: 100%;
+  height: 4px;
+  top: 33%;
+  left: 0;
+  transform-origin: left center;
+}
+
+.h-grid-line-2 {
+  width: 100%;
+  height: 3px;
+  top: 66%;
+  left: 0;
+  transform-origin: right center;
+}
+
+.v-grid-line {
+  width: 4px;
+  height: 100%;
+  left: 33%;
+  top: 0;
+  transform-origin: center top;
+}
+
+.v-grid-line-2 {
+  width: 3px;
+  height: 100%;
+  left: 66%;
+  top: 0;
+  transform-origin: center bottom;
+}
+
+.composition-container {
+  position: relative;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.composition-canvas {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 100px);
+  gap: 6px;
+  padding: 10px;
+  background: #000000;
+}
+
+.composition-rect {
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+  position: relative;
+}
+
+.comp-line {
+  position: absolute;
+  background: #000000;
+  pointer-events: none;
+}
+
+.comp-h-line {
+  width: 100%;
+  height: 4px;
+  top: 50%;
+  left: 0;
+  transform-origin: center center;
+}
+
+.comp-v-line {
+  width: 4px;
+  height: 100%;
+  left: 50%;
+  top: 0;
+  transform-origin: center center;
+}
+
+.color-blocks-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.color-block-card {
+  background: #FFFFFF;
+  border: 3px solid #000000;
+  overflow: hidden;
+  cursor: default;
+}
+
+.color-block-swatch {
+  width: 100%;
+  height: 180px;
+}
+
+.color-block-info {
+  padding: 1.2rem;
+  border-top: 3px solid #000000;
+}
+
+.color-block-info h3 {
+  font-family: 'Arial', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.3rem;
+}
+
+.color-block-info p {
+  font-family: 'Arial', sans-serif;
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.destijl-footer-section {
+  padding: 6rem 8%;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-lines {
+  position: relative;
+  height: 80px;
+  margin-bottom: 2rem;
+}
+
+.footer-line {
+  position: absolute;
+  background: #000000;
+}
+
+.fl-1 {
+  width: 100%;
+  height: 6px;
+  top: 0;
+  left: 0;
+  transform-origin: left center;
+}
+
+.fl-2 {
+  width: 60%;
+  height: 3px;
+  bottom: 0;
+  right: 0;
+  transform-origin: right center;
+}
+
+.fl-3 {
+  width: 4px;
+  height: 100%;
+  right: 30%;
+  top: 0;
+  transform-origin: center top;
+}
+
+.destijl-footer-text {
+  font-family: 'Arial', sans-serif;
+  font-size: 1rem;
+  line-height: 1.8;
+  text-align: center;
+  color: #333;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.destijl-footer-text span {
+  font-size: 0.85rem;
+  color: #777;
+  letter-spacing: 0.1em;
+}
+
+@media (max-width: 768px) {
+  .destijl-title {
+    font-size: clamp(3rem, 15vw, 6rem);
+  }
+
+  .color-blocks-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .composition-canvas {
+    grid-template-rows: repeat(4, 70px);
+  }
+}

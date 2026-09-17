@@ -1,90 +1,153 @@
-import React from 'react';
-import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import { ReactComponent as HandFan } from '../../assets/japanese-hand-fan-svgrepo-com.svg';
+import '../../style/LandingPage.css';
 
+const styles = [
+  {
+    name: 'Brutalism',
+    kanji: '暴',
+    desc: 'Raw, unpolished, and bold aesthetic with large typography and high contrast.',
+    to: '/brutalism',
+  },
+  {
+    name: 'Minimalism',
+    kanji: '簡',
+    desc: 'Clean layouts, limited palette, and plenty of white space for visual clarity.',
+    to: '/minimalism',
+  },
+  {
+    name: 'Futurism',
+    kanji: '未',
+    desc: 'Bold geometric shapes, neon colors, and advanced interactive elements.',
+    to: '/futurism',
+  },
+  {
+    name: 'Bauhaus',
+    kanji: '包',
+    desc: 'Geometric purity, primary colors, and functional form follows function.',
+    to: '/bauhaus',
+  },
+  {
+    name: 'Art Deco',
+    kanji: '装',
+    desc: 'Luxurious ornamentation, gold accents, and geometric elegance.',
+    to: '/art-deco',
+  },
+  {
+    name: 'Memphis',
+    kanji: '孟',
+    desc: 'Playful pop colors, scattered shapes, and postmodern irony.',
+    to: '/memphis',
+  },
+  {
+    name: 'Art Nouveau',
+    kanji: '芸',
+    desc: 'Organic flowing lines, floral motifs, and natural elegance.',
+    to: '/art-nouveau',
+  },
+  {
+    name: 'Constructivism',
+    kanji: '構',
+    desc: 'Industrial forms, bold angles, and revolutionary geometric composition.',
+    to: '/constructivism',
+  },
+  {
+    name: 'De Stijl',
+    kanji: '派',
+    desc: 'Primary colors, horizontal-vertical grid, and asymmetric balance.',
+    to: '/de-stijl',
+  },
+];
 
 export default function WelcomeSection() {
-	const [scrollY, setScrollY] = useState(0);
-
-	// Ascolta l'evento di scroll
-	useEffect(() => {
-	  const handleScroll = () => {
-		setScrollY(window.scrollY); 
-	  };
-  
-	  window.addEventListener('scroll', handleScroll); 
-	  return () => window.removeEventListener('scroll', handleScroll); 
-	}, []);
-  
   return (
-	
-    <section className="welcome-section py-5 text-center text-white">
-      <div className="container">
-        <h1 className="display-4 mb-4">Welcome to our Design Exploration Hub</h1>
-        <p className="lead mb-4">
-          This website is dedicated to showcasing the diverse and dynamic world of web design. We explore the principles and aesthetics behind different design movements, from the raw, bold expressions of Brutalism, to the clean, minimalist elegance of Minimalism, and beyond.
-        </p>
-        <p className="mb-4">
-          Our mission is to not only highlight the beauty of these styles but also to show how they influence the creation of functional, intuitive, and visually compelling websites. Whether you're a designer, developer, or enthusiast, this site offers an insightful journey through the various approaches that shape modern web experiences.
-        </p>
-        <p className="mb-5">
-          Dive in and discover how design is not just about how things look, but how they work—each movement with its own unique approach to solving creative challenges.
-        </p>
-		</div>
+    <section className="welcome-section">
+      {/* Vertical decorative text */}
+      <div className="welcome-vertical-left">
+        <span>デザイン</span>
+      </div>
+      <div className="welcome-vertical-right">
+        <span>探索する</span>
+      </div>
 
-		{/* sezione banner movimento */}
-		
-		<div 
-        className=" py-4 mt-2 w-100"
-        style={{
-          whiteSpace: 'nowrap',
-          overflow: 'hidden',
-          width: '100%',
-        }}
-      >
-        <motion.p
-          className="display-6"
-          initial={{ opacity: 0, x: '-100%' }} // Inizia fuori a sinistra
-          animate={{
-            opacity: 1,
-            x: `${-scrollY * 0.15 + 100}%`, // Muove il testo da sinistra a destra con il movimento dello scroll
-          }}
-          transition={{
-            type: 'tween', // Usa un tween per un movimento più lineare
-            ease: 'easeOut', // Rende il movimento più fluido
-            duration: 0.5,
-          }}
+      {/* Section header */}
+      <div className="welcome-header">
+        <motion.div
+          className="welcome-fan"
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1.4, ease: [0.25, 0.1, 0.25, 1] }}
         >
-          "優れたデザインは美しさだけでなく、機能性、使いやすさ、そして意味のある体験を生み出すことが重要です。"
+          <HandFan />
+        </motion.div>
+
+        <motion.h2
+          className="welcome-title"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          Explore Design Movements
+        </motion.h2>
+
+        <motion.p
+          className="welcome-subtitle"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          Design movements to explore
         </motion.p>
       </div>
-     
 
-        {/* Introduzione ai vari stili di design */}
-		<div className='container'>
-        <div className="design-style-section">
-          <h2 className="mb-4">Our Design Styles</h2>
-          <div className="row">
-            <div className="col-lg-4">
-              <h3>Brutalism</h3>
-              <p>
-                Brutalism in web design is characterized by its raw, unpolished, and bold aesthetic, often with large typography and high contrast colors. It breaks away from traditional polished design, making a statement with simplicity and functionality.
-              </p>
-            </div>
-            <div className="col-lg-4">
-              <h3>Minimalism</h3>
-              <p>
-                Minimalism embraces simplicity and functionality. It uses clean layouts, a limited color palette, and plenty of white space to make the design easy to navigate and visually pleasing.
-              </p>
-            </div>
-            <div className="col-lg-4">
-              <h3>Futurism</h3>
-              <p>
-                Futurism in web design incorporates bold geometric shapes, neon colors, and advanced interactive elements to evoke a sense of modernity and technological progress.
-              </p>
-            </div>
-          </div>
-        </div>
+      {/* Style cards */}
+      <div className="welcome-styles">
+        {styles.map((s, i) => (
+          <motion.div
+            key={s.name}
+            className="ma-card"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: i * 0.15, duration: 0.7, ease: 'easeOut' }}
+          >
+            <Link to={s.to} className="ma-card-link" onClick={() => window.scrollTo(0, 0)}>
+              <div className="ma-card-kanji">{s.kanji}</div>
+              <div className="ma-card-divider" />
+              <h3 className="ma-card-title">{s.name}</h3>
+              <p className="ma-card-desc">{s.desc}</p>
+              <div className="ma-card-footer">
+                <span className="ma-card-explore">View</span>
+                <motion.span
+                  className="ma-card-arrow"
+                  animate={{ x: [0, 4, 0] }}
+                  transition={{ repeat: Infinity, duration: 2, ease: 'easeInOut' }}
+                >
+                  →
+                </motion.span>
+              </div>
+            </Link>
+          </motion.div>
+        ))}
+      </div>
+
+      {/* Bottom divider */}
+      <div className="welcome-bottom">
+        <div className="welcome-bottom-line" />
+        <motion.span
+          className="welcome-bottom-kanji"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 0.15 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
+        >
+          間
+        </motion.span>
+        <div className="welcome-bottom-line" />
       </div>
     </section>
   );

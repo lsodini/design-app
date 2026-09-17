@@ -1,0 +1,138 @@
+.not-found-page {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: #f7f5f0;
+  overflow: hidden;
+}
+
+.not-found-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.not-found-enso {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.not-found-enso svg {
+  width: 100%;
+  height: 100%;
+}
+
+.not-found-kanji {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 6rem;
+  font-weight: 100;
+  color: #1a1a1a;
+  user-select: none;
+  margin-top: -2rem;
+}
+
+.not-found-info {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin-top: 12rem;
+}
+
+.not-found-code {
+  display: block;
+  font-size: 5rem;
+  font-weight: 200;
+  color: #1a1a1a;
+  letter-spacing: 0.5rem;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.not-found-text {
+  font-size: 1rem;
+  font-weight: 300;
+  color: #1a1a1a;
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+  margin: 0 0 3rem;
+  opacity: 0.5;
+}
+
+.not-found-link {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  border: 1px solid rgba(26, 26, 26, 0.15);
+  transition: all 0.4s ease;
+}
+
+.not-found-link:hover {
+  border-color: rgba(26, 26, 26, 0.4);
+}
+
+.not-found-link-jp {
+  font-size: 0.9rem;
+  color: #1a1a1a;
+  letter-spacing: 0.2rem;
+}
+
+.not-found-link-en {
+  font-size: 0.65rem;
+  color: #1a1a1a;
+  letter-spacing: 0.15rem;
+  text-transform: uppercase;
+  opacity: 0.4;
+}
+
+.not-found-vertical {
+  position: absolute;
+  right: 8%;
+  top: 50%;
+  transform: translateY(-50%);
+  writing-mode: vertical-rl;
+  display: flex;
+  gap: 1.5rem;
+  font-size: 4rem;
+  font-weight: 100;
+  color: #1a1a1a;
+  user-select: none;
+}
+
+.not-found-vertical span {
+  line-height: 1;
+}
+
+@media (max-width: 768px) {
+  .not-found-enso {
+    width: 200px;
+    height: 200px;
+  }
+
+  .not-found-kanji {
+    font-size: 4rem;
+    margin-top: -1.5rem;
+  }
+
+  .not-found-code {
+    font-size: 3.5rem;
+  }
+
+  .not-found-vertical {
+    font-size: 2.5rem;
+    right: 5%;
+  }
+}

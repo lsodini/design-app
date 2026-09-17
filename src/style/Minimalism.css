@@ -1,0 +1,230 @@
+.minimalism-page {
+  min-height: 100vh;
+  background: #fafafa;
+  color: #1a1a1a;
+}
+
+.minimal-hero {
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.minimal-title {
+  font-size: 5rem;
+  font-weight: 300;
+  letter-spacing: -2px;
+  text-align: center;
+}
+
+.minimal-line {
+  width: 80px;
+  height: 1px;
+  background: #1a1a1a;
+  margin: 2rem 0;
+}
+
+.minimal-subtitle {
+  font-size: 1.1rem;
+  color: #888;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+.minimal-section {
+  padding: 5rem 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.minimal-section-title {
+  font-size: 1.8rem;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 3rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.minimal-principles {
+  display: flex;
+  gap: 4rem;
+  align-items: flex-start;
+}
+
+.principle-nav {
+  flex: 0 0 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.principle-btn {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  background: transparent;
+  border: none;
+  font-size: 1rem;
+  color: #999;
+  cursor: pointer;
+  text-align: left;
+  transition: color 0.2s;
+  font-family: inherit;
+}
+
+.principle-btn:hover {
+  color: #1a1a1a;
+}
+
+.principle-btn.active {
+  color: #1a1a1a;
+  font-weight: 500;
+}
+
+.principle-num {
+  font-size: 0.75rem;
+  color: #ccc;
+  font-weight: 300;
+}
+
+.principle-btn.active .principle-num {
+  color: #1a1a1a;
+}
+
+.principle-content {
+  flex: 1;
+  padding-top: 1rem;
+}
+
+.principle-detail h3 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
+.principle-detail p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #666;
+  max-width: 500px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.gallery-item {
+  aspect-ratio: 4/3;
+  border-radius: 8px;
+  padding: 2rem;
+  cursor: pointer;
+  transition: box-shadow 0.3s;
+  border: 2px solid transparent;
+}
+
+.gallery-item.active {
+  border-color: currentColor;
+}
+
+.gallery-item:hover {
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+.gallery-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.gallery-mock {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mock-nav {
+  height: 8px;
+  width: 40%;
+  border-radius: 4px;
+}
+
+.mock-hero {
+  height: 40px;
+  border-radius: 4px;
+}
+
+.mock-text {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.mock-text > div {
+  height: 6px;
+  border-radius: 3px;
+}
+
+.gallery-label {
+  font-size: 0.8rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  opacity: 0.5;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.minimal-quote {
+  text-align: center;
+  padding: 4rem 0;
+}
+
+.minimal-quote p {
+  font-size: 1.8rem;
+  font-weight: 300;
+  line-height: 1.6;
+  color: #333;
+  font-style: italic;
+  max-width: 700px;
+  margin: 0 auto 1.5rem;
+}
+
+.minimal-quote span {
+  color: #999;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+}
+
+@media (max-width: 768px) {
+  .minimal-title {
+    font-size: 3rem;
+  }
+  .minimal-principles {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .principle-nav {
+    flex: none;
+    width: 100%;
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 0;
+  }
+  .principle-btn {
+    white-space: nowrap;
+  }
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+  .minimal-quote p {
+    font-size: 1.3rem;
+  }
+}

@@ -1,0 +1,491 @@
+.futurism-page {
+  min-height: 100vh;
+  background: #050510;
+  color: #e0e0e0;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.particle-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.futurism-page > *:not(.particle-canvas):not(.navbar) {
+  position: relative;
+  z-index: 1;
+}
+
+.neon-text {
+  color: #00f0ff;
+  text-shadow:
+    0 0 7px #00f0ff80,
+    0 0 20px #00f0ff40,
+    0 0 40px #00f0ff20;
+}
+
+.neon-border {
+  border: 1px solid #00f0ff40;
+  box-shadow: 0 0 10px #00f0ff15, inset 0 0 10px #00f0ff08;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* HERO */
+.futur-hero {
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  position: relative;
+}
+
+.futur-title {
+  font-size: 5rem;
+  font-weight: 900;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+
+.cursor {
+  animation: blink 0.8s infinite;
+  color: #00f0ff;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.futur-subtitle {
+  font-size: 1.2rem;
+  color: #666;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+}
+
+/* FLOATING ORBS */
+.floating-orbs {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(30px);
+}
+
+/* TECH MARQUEE */
+.tech-marquee {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 2rem;
+  mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+}
+
+.marquee-track {
+  display: flex;
+  gap: 3rem;
+  animation: marquee 20s linear infinite;
+  width: max-content;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-33.33%); }
+}
+
+.tech-word {
+  font-size: 0.85rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #00f0ff50;
+  white-space: nowrap;
+}
+
+/* SPATIAL GRID */
+.spatial-grid-wrapper {
+  width: 100%;
+  height: 300px;
+  perspective: 600px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: -2rem 0;
+}
+
+.spatial-grid {
+  width: 80%;
+  height: 250px;
+  position: relative;
+  transform-style: preserve-3d;
+  border: 1px solid #00f0ff15;
+}
+
+.grid-line-h,
+.grid-line-v {
+  position: absolute;
+  background: #00f0ff10;
+}
+
+.grid-line-h {
+  width: 100%;
+  height: 1px;
+}
+
+.grid-line-v {
+  width: 1px;
+  height: 100%;
+}
+
+.grid-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, #00f0ff20, transparent 70%);
+  border-radius: 50%;
+  filter: blur(20px);
+}
+
+/* SECTIONS */
+.futur-section {
+  padding: 5rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.futur-section-title {
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-align: center;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  padding: 1rem 2rem;
+  margin-bottom: 3rem;
+  display: inline-block;
+}
+
+/* GLASS MORPHISM SHOWCASE */
+.glass-showcase {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 0.8fr;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  transform-style: preserve-3d;
+}
+
+.glass-panel:hover {
+  border-color: rgba(0, 240, 255, 0.25);
+  box-shadow:
+    0 0 20px rgba(0, 240, 255, 0.08),
+    inset 0 0 20px rgba(0, 240, 255, 0.03);
+}
+
+.card-glare {
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.glass-demo {
+  padding: 2.5rem;
+}
+
+.glass-lg {
+  min-height: 280px;
+}
+
+.glass-md {
+  min-height: 240px;
+}
+
+.glass-sm {
+  min-height: 200px;
+}
+
+.glass-content {
+  position: relative;
+  z-index: 2;
+}
+
+.glass-icon {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.glass-content h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 0.75rem;
+}
+
+.glass-content p {
+  color: #888;
+  line-height: 1.6;
+  font-size: 0.9rem;
+}
+
+/* KINETIC TYPE */
+.kinetic-stage {
+  text-align: center;
+}
+
+.kinetic-words {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.kinetic-word {
+  font-size: 3rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #ffffff15;
+  cursor: pointer;
+  display: inline-block;
+  transition: color 0.3s, text-shadow 0.3s;
+  perspective: 500px;
+}
+
+.kinetic-word:hover {
+  color: #00f0ff;
+  text-shadow: 0 0 20px #00f0ff80, 0 0 40px #00f0ff40;
+}
+
+.kinetic-live {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  border: 1px solid #00f0ff20;
+  border-radius: 12px;
+  background: rgba(0, 240, 255, 0.03);
+}
+
+.kinetic-label {
+  font-size: 0.7rem;
+  letter-spacing: 4px;
+  color: #00f0ff;
+  padding: 0.3rem 0.8rem;
+  border: 1px solid #00f0ff40;
+  border-radius: 4px;
+  animation: pulse-label 2s ease-in-out infinite;
+}
+
+@keyframes pulse-label {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.kinetic-current {
+  font-size: 3.5rem;
+  font-weight: 900;
+  letter-spacing: 8px;
+}
+
+/* FEATURES */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.feature-card {
+  padding: 2.5rem;
+  border-radius: 16px;
+  transition: box-shadow 0.3s, border-color 0.3s;
+  transform-style: preserve-3d;
+}
+
+.feature-card:hover {
+  border-color: #00f0ff30;
+  box-shadow: 0 0 30px #00f0ff12;
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+.feature-card h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #fff;
+}
+
+.feature-card p {
+  color: #888;
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+/* NEON RINGS */
+.neon-showcase {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  position: relative;
+}
+
+.neon-ring {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border: 1px solid #00f0ff30;
+  border-radius: 50%;
+  animation: rotate-ring 8s linear infinite;
+}
+
+.ring-2 {
+  width: 260px;
+  height: 260px;
+  animation-duration: 12s;
+  animation-direction: reverse;
+  border-color: #ff00ff20;
+}
+
+.ring-3 {
+  width: 320px;
+  height: 320px;
+  animation-duration: 16s;
+  border-color: #00ff8820;
+}
+
+@keyframes rotate-ring {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.neon-center {
+  font-size: 3rem;
+  z-index: 2;
+}
+
+/* CTA */
+.futur-cta {
+  text-align: center;
+}
+
+.futur-cta .cta-container {
+  display: inline-block;
+  padding: 4rem 5rem;
+}
+
+.futur-cta h2 {
+  font-size: 3rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+}
+
+.futur-cta p {
+  color: #666;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  letter-spacing: 1px;
+}
+
+.neon-btn {
+  padding: 1rem 3rem;
+  background: transparent;
+  border: 2px solid #00f0ff;
+  color: #00f0ff;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-family: inherit;
+}
+
+.neon-btn:hover {
+  background: #00f0ff15;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .futur-title {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+  }
+  .futur-subtitle {
+    font-size: 0.8rem;
+    letter-spacing: 4px;
+  }
+  .glass-showcase {
+    grid-template-columns: 1fr;
+  }
+  .kinetic-word {
+    font-size: 1.8rem;
+  }
+  .kinetic-current {
+    font-size: 2rem;
+  }
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+  .futur-cta .cta-container {
+    padding: 2rem;
+  }
+  .futur-cta h2 {
+    font-size: 2rem;
+  }
+  .neon-showcase {
+    height: 200px;
+  }
+  .neon-ring {
+    width: 120px;
+    height: 120px;
+  }
+  .ring-2 {
+    width: 160px;
+    height: 160px;
+  }
+  .ring-3 {
+    width: 200px;
+    height: 200px;
+  }
+}

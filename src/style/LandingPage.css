@@ -1,0 +1,531 @@
+/* ============================================================
+   MA (間) — Japanese Design Aesthetic
+   Negative Space · Vertical Writing · The Three Scripts
+   ============================================================ */
+
+/* ===================== BASE ===================== */
+.landing-page {
+  min-height: 100vh;
+  background: #f7f5f0;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* washi paper grain */
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9990;
+  pointer-events: none;
+  opacity: 0.35;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+}
+
+/* ===================== LOGO ===================== */
+.logo {
+  color: #000000;
+}
+
+.logo h1,
+.logo p,
+.logo a {
+  color: inherit;
+}
+
+/* ===================== ENSŌ (brush) ===================== */
+.enso {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  left: 3%;
+  bottom: 5%;
+  opacity: 0.035;
+  z-index: 0;
+}
+
+.enso svg {
+  width: 100%;
+  height: 100%;
+}
+
+.enso svg circle {
+  will-change: transform;
+}
+
+/* ===================== VERTICAL TEXT ===================== */
+.vertical-text-group {
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  writing-mode: vertical-rl;
+  display: flex;
+  gap: 2rem;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.vertical-char {
+  font-size: 6rem;
+  font-weight: 100;
+  color: #1a1a1a;
+  line-height: 1;
+  user-select: none;
+}
+
+/* ===================== MA LINES ===================== */
+.ma-lines {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.ma-line {
+  position: absolute;
+  background: #1a1a1a;
+  will-change: transform;
+}
+
+.ma-line-1 {
+  width: 1px;
+  height: 35%;
+  top: 15%;
+  left: 18%;
+  opacity: 0.06;
+}
+
+.ma-line-2 {
+  width: 25%;
+  height: 1px;
+  top: 72%;
+  right: 12%;
+  opacity: 0.05;
+}
+
+.ma-line-3 {
+  width: 1px;
+  height: 20%;
+  bottom: 8%;
+  left: 45%;
+  opacity: 0.04;
+}
+
+/* ===================== HERO SECTION ===================== */
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-ma {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ===================== QUOTES ===================== */
+.hero-quotes {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.hero-quotes-wrapper {
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-quote {
+  text-align: center;
+  max-width: 520px;
+}
+
+.hero-quote-text {
+  font-size: 1.1rem;
+  color: #1a1a1a;
+  line-height: 1.9;
+  margin: 0 0 1.2rem;
+  font-weight: 300;
+  letter-spacing: 0.2px;
+}
+
+.hero-quote-author {
+  font-size: 0.7rem;
+  color: #1a1a1a45;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.hero-quotes-nav {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.quote-mark {
+  width: 20px;
+  height: 20px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.quote-mark-inner {
+  width: 5px;
+  height: 5px;
+  border: 1px solid #1a1a1a30;
+  border-radius: 50%;
+  transition: all 0.4s ease;
+}
+
+.quote-mark.active .quote-mark-inner {
+  background: #c73e1d;
+  border-color: #c73e1d;
+  transform: scale(1.4);
+}
+
+.quote-mark:hover .quote-mark-inner {
+  border-color: #c73e1d60;
+}
+
+/* ===================== SCROLL INDICATOR ===================== */
+.scroll-indicator {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.scroll-indicator-line {
+  width: 1px;
+  height: 48px;
+  background: #1a1a1a10;
+  overflow: hidden;
+  border-radius: 1px;
+}
+
+.scroll-indicator-fill {
+  width: 100%;
+  height: 100%;
+  background: #c73e1d;
+  transform-origin: top;
+  will-change: transform;
+}
+
+/* ===================== WELCOME SECTION ===================== */
+.welcome-section {
+  background: #f7f5f0;
+  color: #1a1a1a;
+  position: relative;
+  z-index: 1;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Vertical decorative text on sides */
+.welcome-vertical-left,
+.welcome-vertical-right {
+  position: absolute;
+  writing-mode: vertical-rl;
+  font-size: 0.7rem;
+  letter-spacing: 6px;
+  color: #1a1a1a08;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.welcome-vertical-left {
+  left: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.welcome-vertical-right {
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Header */
+.welcome-header {
+  text-align: center;
+  padding: 8rem 2rem 5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.welcome-fan {
+  width: 55px;
+  height: 55px;
+  margin: 0 auto 2rem;
+  transform-origin: bottom center;
+}
+
+.welcome-fan svg {
+  width: 100%;
+  height: 100%;
+  fill: #1a1a1a;
+  opacity: 0.08;
+}
+
+.welcome-fan svg * {
+  fill: #1a1a1a;
+}
+
+.welcome-title {
+  font-size: 2.4rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+  color: #1a1a1a;
+}
+
+.welcome-subtitle {
+  font-size: 0.9rem;
+  color: #1a1a1a50;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+/* Style cards */
+.welcome-styles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem 6rem;
+  position: relative;
+  z-index: 1;
+}
+
+.ma-card {
+  padding: 2.5rem 2rem;
+  border-right: 1px solid #1a1a1a08;
+  border-bottom: 1px solid #1a1a1a08;
+  transition: background 0.4s ease;
+}
+
+.ma-card:nth-child(3n) {
+  border-right: none;
+}
+
+.ma-card:nth-child(n+7) {
+  border-bottom: none;
+}
+
+.ma-card:hover {
+  background: #1a1a1a04;
+}
+
+.ma-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.ma-card-kanji {
+  font-size: 3.5rem;
+  font-weight: 100;
+  color: #1a1a1a12;
+  margin-bottom: 2rem;
+  line-height: 1;
+  transition: color 0.4s;
+}
+
+.ma-card:hover .ma-card-kanji {
+  color: #c73e1d25;
+}
+
+.ma-card-divider {
+  width: 24px;
+  height: 1px;
+  background: #c73e1d40;
+  margin-bottom: 1.5rem;
+  transition: width 0.4s ease;
+}
+
+.ma-card:hover .ma-card-divider {
+  width: 40px;
+}
+
+.ma-card-title {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.ma-card-desc {
+  font-size: 0.85rem;
+  color: #1a1a1a60;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  font-weight: 300;
+}
+
+.ma-card-footer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ma-card-explore {
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #c73e1d;
+  font-weight: 500;
+}
+
+.ma-card-arrow {
+  color: #c73e1d;
+  font-size: 0.85rem;
+  display: inline-block;
+}
+
+.ma-card:hover .ma-card-explore {
+  letter-spacing: 5px;
+}
+
+/* Bottom divider */
+.welcome-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0 4rem 6rem;
+}
+
+.welcome-bottom-line {
+  flex: 1;
+  height: 1px;
+  background: #1a1a1a08;
+}
+
+.welcome-bottom-kanji {
+  font-size: 4rem;
+  font-weight: 100;
+  color: #1a1a1a;
+  user-select: none;
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 992px) {
+  .welcome-styles {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .ma-card:nth-child(3n) {
+    border-right: 1px solid #1a1a1a08;
+  }
+  .ma-card:nth-child(2n) {
+    border-right: none;
+  }
+  .ma-card:nth-child(n+7) {
+    border-bottom: 1px solid #1a1a1a08;
+  }
+  .ma-card:last-child {
+    border-bottom: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .logo .flex-grow-1 {
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+  }
+  .logo .flex-grow-1 .display-6 {
+    font-size: 1.1rem;
+    display: inline-block;
+    white-space: nowrap;
+  }
+  #logo {
+    flex-shrink: 0;
+    justify-content: center;
+  }
+  #logo h1 {
+    font-size: 2rem !important;
+  }
+  .enso {
+    width: 180px;
+    height: 180px;
+    left: 2%;
+    bottom: 5%;
+    opacity: 0.05;
+  }
+  .vertical-text-group {
+    right: 2%;
+    gap: 1rem;
+  }
+  .vertical-char {
+    font-size: 3rem;
+  }
+  .hero-quote-text {
+    font-size: 0.95rem;
+  }
+  .welcome-title {
+    font-size: 1.8rem;
+  }
+  .welcome-styles {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .ma-card {
+    border-right: none;
+    border-bottom: 1px solid #1a1a1a08;
+    padding: 2.5rem 2rem;
+  }
+  .ma-card:last-child {
+    border-bottom: none;
+  }
+  .welcome-vertical-left,
+  .welcome-vertical-right {
+    display: none;
+  }
+  .welcome-header {
+    padding: 5rem 1.5rem 3rem;
+  }
+  .welcome-styles {
+    padding: 0 1.5rem 4rem;
+  }
+  .welcome-bottom {
+    padding: 0 2rem 4rem;
+  }
+  .welcome-bottom-kanji {
+    font-size: 2.5rem;
+  }
+  .ma-line-1 {
+    left: 10%;
+    height: 25%;
+  }
+  .ma-line-2 {
+    width: 15%;
+    right: 8%;
+  }
+  .ma-line-3 {
+    left: 45%;
+    height: 15%;
+  }
+}
