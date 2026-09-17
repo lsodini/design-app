@@ -454,14 +454,22 @@
 
   .c-propaganda__layout {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1.5rem;
     padding: 0 1rem;
     max-width: 100%;
-    overflow: hidden;
+    overflow: visible;
   }
 
   .c-propaganda {
     overflow: visible;
+  }
+
+  .c-propaganda__words {
+    gap: 0.5rem;
+  }
+
+  .c-propaganda__word {
+    font-size: clamp(1.4rem, 6vw, 2.5rem);
   }
 
   .c-typography__grid {
